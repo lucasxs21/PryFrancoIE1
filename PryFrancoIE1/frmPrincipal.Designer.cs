@@ -28,16 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroDeProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.activosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.proveedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroDeProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusgeneral = new System.Windows.Forms.StatusStrip();
             this.statusFecha = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusHora = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timerhora = new System.Windows.Forms.Timer(this.components);
+            this.statusUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusgeneral.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +64,20 @@
             this.gestionToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.gestionToolStripMenuItem.Text = "Gestion";
             // 
+            // proveedoresToolStripMenuItem1
+            // 
+            this.proveedoresToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registroDeProveedoresToolStripMenuItem});
+            this.proveedoresToolStripMenuItem1.Name = "proveedoresToolStripMenuItem1";
+            this.proveedoresToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.proveedoresToolStripMenuItem1.Text = "Proveedores";
+            // 
+            // registroDeProveedoresToolStripMenuItem
+            // 
+            this.registroDeProveedoresToolStripMenuItem.Name = "registroDeProveedoresToolStripMenuItem";
+            this.registroDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.registroDeProveedoresToolStripMenuItem.Text = "Registro de proveedores";
+            // 
             // listadoReportesToolStripMenuItem
             // 
             this.listadoReportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -74,34 +91,21 @@
             this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.activosToolStripMenuItem});
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
             // 
             // activosToolStripMenuItem
             // 
             this.activosToolStripMenuItem.Name = "activosToolStripMenuItem";
-            this.activosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.activosToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.activosToolStripMenuItem.Text = "Activos";
-            // 
-            // proveedoresToolStripMenuItem1
-            // 
-            this.proveedoresToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.registroDeProveedoresToolStripMenuItem});
-            this.proveedoresToolStripMenuItem1.Name = "proveedoresToolStripMenuItem1";
-            this.proveedoresToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.proveedoresToolStripMenuItem1.Text = "Proveedores";
-            // 
-            // registroDeProveedoresToolStripMenuItem
-            // 
-            this.registroDeProveedoresToolStripMenuItem.Name = "registroDeProveedoresToolStripMenuItem";
-            this.registroDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.registroDeProveedoresToolStripMenuItem.Text = "Registro de proveedores";
             // 
             // statusgeneral
             // 
             this.statusgeneral.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusFecha,
-            this.statusHora});
+            this.statusHora,
+            this.statusUser});
             this.statusgeneral.Location = new System.Drawing.Point(0, 428);
             this.statusgeneral.Name = "statusgeneral";
             this.statusgeneral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -123,6 +127,19 @@
             this.statusHora.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.statusHora.Size = new System.Drawing.Size(31, 17);
             this.statusHora.Text = "hora";
+            // 
+            // timerhora
+            // 
+            this.timerhora.Enabled = true;
+            this.timerhora.Interval = 1000;
+            this.timerhora.Tick += new System.EventHandler(this.timerhora_Tick);
+            // 
+            // statusUser
+            // 
+            this.statusUser.Name = "statusUser";
+            this.statusUser.Size = new System.Drawing.Size(46, 17);
+            this.statusUser.Text = "usuario";
+            this.statusUser.Click += new System.EventHandler(this.toolStripStatusLabel1_Click_1);
             // 
             // frmPrincipal
             // 
@@ -157,6 +174,8 @@
         private System.Windows.Forms.StatusStrip statusgeneral;
         private System.Windows.Forms.ToolStripStatusLabel statusFecha;
         private System.Windows.Forms.ToolStripStatusLabel statusHora;
+        private System.Windows.Forms.Timer timerhora;
+        private System.Windows.Forms.ToolStripStatusLabel statusUser;
     }
 }
 

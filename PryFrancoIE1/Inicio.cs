@@ -28,7 +28,7 @@ namespace PryFrancoIE1
             if (contadorTiempo > 3000)
             {
                 this.Hide();
-                frmPrincipal frm = new frmPrincipal();
+                frmlogin frm = new frmlogin();
                 frm.Show();
                 timer.Enabled = false;
             }

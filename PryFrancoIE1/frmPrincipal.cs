@@ -19,14 +19,24 @@ namespace PryFrancoIE1
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            statusFecha.Text = DateTime.Now.ToLongDateString();
-            statusHora.Text = DateTime.Now.ToLongTimeString();
-            
+           
+
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void timerhora_Tick(object sender, EventArgs e)
+        {
+            statusHora.Text = DateTime.Now.ToLongTimeString();
+            statusFecha.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void toolStripStatusLabel1_Click_1(object sender, EventArgs e)
+        {
+            
         }
     }
 }
