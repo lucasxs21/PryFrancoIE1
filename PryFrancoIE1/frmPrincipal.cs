@@ -38,5 +38,24 @@ namespace PryFrancoIE1
         {
             
         }
+
+        private void registroDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegistro_proveedores frm = new frmRegistro_proveedores();
+
+            frm.Show();
+            this.Hide();
+
+        }
+
+        private void statusgeneral_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void activosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

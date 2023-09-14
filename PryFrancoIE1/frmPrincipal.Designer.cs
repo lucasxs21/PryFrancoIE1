@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,8 +40,8 @@
             this.statusgeneral = new System.Windows.Forms.StatusStrip();
             this.statusFecha = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusHora = new System.Windows.Forms.ToolStripStatusLabel();
-            this.timerhora = new System.Windows.Forms.Timer(this.components);
             this.statusUser = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timerhora = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusgeneral.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +70,7 @@
             this.proveedoresToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registroDeProveedoresToolStripMenuItem});
             this.proveedoresToolStripMenuItem1.Name = "proveedoresToolStripMenuItem1";
-            this.proveedoresToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.proveedoresToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.proveedoresToolStripMenuItem1.Text = "Proveedores";
             // 
             // registroDeProveedoresToolStripMenuItem
@@ -77,6 +78,7 @@
             this.registroDeProveedoresToolStripMenuItem.Name = "registroDeProveedoresToolStripMenuItem";
             this.registroDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.registroDeProveedoresToolStripMenuItem.Text = "Registro de proveedores";
+            this.registroDeProveedoresToolStripMenuItem.Click += new System.EventHandler(this.registroDeProveedoresToolStripMenuItem_Click);
             // 
             // listadoReportesToolStripMenuItem
             // 
@@ -91,14 +93,15 @@
             this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.activosToolStripMenuItem});
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
             // 
             // activosToolStripMenuItem
             // 
             this.activosToolStripMenuItem.Name = "activosToolStripMenuItem";
-            this.activosToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.activosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.activosToolStripMenuItem.Text = "Activos";
+            this.activosToolStripMenuItem.Click += new System.EventHandler(this.activosToolStripMenuItem_Click);
             // 
             // statusgeneral
             // 
@@ -112,6 +115,7 @@
             this.statusgeneral.Size = new System.Drawing.Size(800, 22);
             this.statusgeneral.TabIndex = 1;
             this.statusgeneral.Text = "statusStrip1";
+            this.statusgeneral.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusgeneral_ItemClicked);
             // 
             // statusFecha
             // 
@@ -128,18 +132,18 @@
             this.statusHora.Size = new System.Drawing.Size(31, 17);
             this.statusHora.Text = "hora";
             // 
-            // timerhora
-            // 
-            this.timerhora.Enabled = true;
-            this.timerhora.Interval = 1000;
-            this.timerhora.Tick += new System.EventHandler(this.timerhora_Tick);
-            // 
             // statusUser
             // 
             this.statusUser.Name = "statusUser";
             this.statusUser.Size = new System.Drawing.Size(46, 17);
             this.statusUser.Text = "usuario";
             this.statusUser.Click += new System.EventHandler(this.toolStripStatusLabel1_Click_1);
+            // 
+            // timerhora
+            // 
+            this.timerhora.Enabled = true;
+            this.timerhora.Interval = 1000;
+            this.timerhora.Tick += new System.EventHandler(this.timerhora_Tick);
             // 
             // frmPrincipal
             // 
@@ -148,6 +152,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusgeneral);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

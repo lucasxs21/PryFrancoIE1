@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmlogin));
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblContra = new System.Windows.Forms.Label();
             this.txtContra = new System.Windows.Forms.TextBox();
             this.lblini = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -64,14 +65,14 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // label2
+            // lblContra
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 124);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Contraseña";
+            this.lblContra.AutoSize = true;
+            this.lblContra.Location = new System.Drawing.Point(12, 124);
+            this.lblContra.Name = "lblContra";
+            this.lblContra.Size = new System.Drawing.Size(61, 13);
+            this.lblContra.TabIndex = 3;
+            this.lblContra.Text = "Contraseña";
             // 
             // txtContra
             // 
@@ -100,10 +101,11 @@
             this.ClientSize = new System.Drawing.Size(217, 230);
             this.Controls.Add(this.lblini);
             this.Controls.Add(this.txtContra);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblContra);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtUsuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmlogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
@@ -118,7 +120,7 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblContra;
         private System.Windows.Forms.TextBox txtContra;
         private System.Windows.Forms.Label lblini;
     }
