@@ -55,6 +55,10 @@ namespace PryFrancoIE1
 
         private void activosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frmProvedores_Activos frm = new frmProvedores_Activos();
+
+            frm.Show();
+            this.Hide();
 
         }
     }

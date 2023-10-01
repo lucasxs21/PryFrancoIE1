@@ -17,7 +17,7 @@ namespace PryFrancoIE1
         {
             InitializeComponent();
         }
-        validacionID validacion = new validacionID();
+        ClsvalidacionID validacion = new ClsvalidacionID();
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (validacion.ValidarUsuario(txtUsuario.Text , txtContra.Text))

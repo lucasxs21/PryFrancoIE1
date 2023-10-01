@@ -7,7 +7,7 @@ using System.IO;
 
 namespace PryFrancoIE1
 {
-    internal class validacionID
+    internal class ClsvalidacionID
     {
         private string usuarioValido = "Admin"; // Define el nombre de usuario válido
         private string contraseñaValida = "Admin"; // Define la contraseña válida

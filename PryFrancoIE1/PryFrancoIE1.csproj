@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsProveedores.cs" />
     <Compile Include="frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,7 +79,7 @@
     <Compile Include="frmRegistro-proveedores.Designer.cs">
       <DependentUpon>frmRegistro-proveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="validacionID.cs" />
+    <Compile Include="ClsvalidacionID.cs" />
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
