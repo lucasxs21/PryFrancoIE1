@@ -32,6 +32,7 @@ namespace PryFrancoIE1
         {
             statusHora.Text = DateTime.Now.ToLongTimeString();
             statusFecha.Text = DateTime.Now.ToLongDateString();
+            statusUser.Text = "Admin";
         }
 
         private void toolStripStatusLabel1_Click_1(object sender, EventArgs e)

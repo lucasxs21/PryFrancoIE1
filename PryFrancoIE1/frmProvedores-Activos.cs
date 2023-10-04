@@ -18,7 +18,7 @@ namespace PryFrancoIE1
             InitializeComponent();
         }
         // Ruta de la carpeta principal del proyecto
-        string rutaProyecto = @"C:\Users\Lucas Franco\source\repos\PryFrancoIE154\PryFrancoIE1\Proveedores";
+        //string rutaProyecto = @"C:\Users\Lucas Franco\source\repos\PryFrancoIE154\PryFrancoIE1\Proveedores";
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             TreeNode selectedNode = e.Node;
@@ -52,12 +52,17 @@ namespace PryFrancoIE1
 
         private void frmProvedores_Activos_Load(object sender, EventArgs e)
         {
+            string rutaBase = AppDomain.CurrentDomain.BaseDirectory;
+            string carpetaProveedores = "Proveedores";
+
+            string rutaCompleta = Path.Combine(rutaBase, carpetaProveedores);
+
             // Agregar la carpeta principal al árbol
             TreeNode rootNode = new TreeNode("Carpetas y Archivos del Proyecto");
             tvCarpetas.Nodes.Add(rootNode);
 
             // Llamamos a un método recursivo para agregar carpetas y archivos
-            AgregarCarpetasYArchivos(rootNode, rutaProyecto);
+            AgregarCarpetasYArchivos(rootNode, rutaCompleta);
 
         }
         private void AgregarCarpetasYArchivos(TreeNode parentNode, string ruta)
@@ -93,5 +98,17 @@ namespace PryFrancoIE1
             }
         }
 
+        private void txtRetorno_Click(object sender, EventArgs e)
+        {
+            frmPrincipal frm = new frmPrincipal();
+
+            frm.Show();
+            this.Hide();
+        }
+
+        private void rtbContenido_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
