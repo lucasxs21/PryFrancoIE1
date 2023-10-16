@@ -32,10 +32,14 @@ namespace PryFrancoIE1
                 this.Hide();
 
             }
-           
 
-            
+            string usuario = txtUsuario.Text;
+
+            ClsvalidacionID.Usuario = usuario;
+
         }
+
+
 
         private void frmlogin_Load(object sender, EventArgs e)
         {
@@ -50,6 +54,16 @@ namespace PryFrancoIE1
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
             txtContra.Enabled = true;
+        }
+
+        private void lblOlvideUser_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("Admin", "Su Usuario es:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void lblOlvideContra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("Admin", "Su Contraseña es:", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

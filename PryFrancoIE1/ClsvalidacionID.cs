@@ -16,6 +16,6 @@ namespace PryFrancoIE1
         {
             return username == usuarioValido && password == contraseñaValida;
         }
-
+        public static string Usuario { get; set; }
     }
 }

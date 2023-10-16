@@ -12,14 +12,16 @@ namespace PryFrancoIE1
 {
     public partial class frmPrincipal : Form
     {
+        private string usuario;
         public frmPrincipal()
         {
             InitializeComponent();
+            this.usuario = usuario;        
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-           
+            
 
         }
 
@@ -32,7 +34,7 @@ namespace PryFrancoIE1
         {
             statusHora.Text = DateTime.Now.ToLongTimeString();
             statusFecha.Text = DateTime.Now.ToLongDateString();
-            statusUser.Text = "Admin";
+            statusUser.Text = ClsvalidacionID.Usuario;
         }
 
         private void toolStripStatusLabel1_Click_1(object sender, EventArgs e)

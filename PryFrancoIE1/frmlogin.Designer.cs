@@ -35,13 +35,15 @@
             this.lblContra = new System.Windows.Forms.Label();
             this.txtContra = new System.Windows.Forms.TextBox();
             this.lblini = new System.Windows.Forms.Label();
+            this.lblOlvideUser = new System.Windows.Forms.LinkLabel();
+            this.lblOlvideContra = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(99, 55);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(121, 20);
             this.txtUsuario.TabIndex = 0;
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
@@ -80,7 +82,7 @@
             this.txtContra.Location = new System.Drawing.Point(99, 117);
             this.txtContra.Name = "txtContra";
             this.txtContra.PasswordChar = '+';
-            this.txtContra.Size = new System.Drawing.Size(100, 20);
+            this.txtContra.Size = new System.Drawing.Size(121, 20);
             this.txtContra.TabIndex = 4;
             this.txtContra.TextChanged += new System.EventHandler(this.txtContra_TextChanged);
             // 
@@ -94,11 +96,35 @@
             this.lblini.TabIndex = 5;
             this.lblini.Text = "Acceso al sistema";
             // 
+            // lblOlvideUser
+            // 
+            this.lblOlvideUser.AutoSize = true;
+            this.lblOlvideUser.Location = new System.Drawing.Point(98, 78);
+            this.lblOlvideUser.Name = "lblOlvideUser";
+            this.lblOlvideUser.Size = new System.Drawing.Size(87, 13);
+            this.lblOlvideUser.TabIndex = 6;
+            this.lblOlvideUser.TabStop = true;
+            this.lblOlvideUser.Text = "Olvidé mi usuario";
+            this.lblOlvideUser.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblOlvideUser_LinkClicked);
+            // 
+            // lblOlvideContra
+            // 
+            this.lblOlvideContra.AutoSize = true;
+            this.lblOlvideContra.Location = new System.Drawing.Point(96, 140);
+            this.lblOlvideContra.Name = "lblOlvideContra";
+            this.lblOlvideContra.Size = new System.Drawing.Size(106, 13);
+            this.lblOlvideContra.TabIndex = 7;
+            this.lblOlvideContra.TabStop = true;
+            this.lblOlvideContra.Text = "Olvidé mi contraseña";
+            this.lblOlvideContra.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblOlvideContra_LinkClicked);
+            // 
             // frmlogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(217, 230);
+            this.ClientSize = new System.Drawing.Size(232, 230);
+            this.Controls.Add(this.lblOlvideContra);
+            this.Controls.Add(this.lblOlvideUser);
             this.Controls.Add(this.lblini);
             this.Controls.Add(this.txtContra);
             this.Controls.Add(this.lblContra);
@@ -123,5 +149,7 @@
         private System.Windows.Forms.Label lblContra;
         private System.Windows.Forms.TextBox txtContra;
         private System.Windows.Forms.Label lblini;
+        private System.Windows.Forms.LinkLabel lblOlvideUser;
+        private System.Windows.Forms.LinkLabel lblOlvideContra;
     }
 }
