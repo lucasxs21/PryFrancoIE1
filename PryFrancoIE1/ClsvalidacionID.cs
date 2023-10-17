@@ -13,50 +13,57 @@ namespace PryFrancoIE1
         private string usuarioValido = "Admin"; // Define el nombre de usuario válido
         private string contraseñaValida = "Admin"; // Define la contraseña válida
 
-
+        string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=SistemaBroker.accdb;";
 
         public bool ValidarUsuario(string username, string password)
         {
-            
+
 
             // Cadena de conexión 
-            string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=SistemaBroker.accdb;";
+            //string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=SistemaBroker.accdb;";
 
-            // Crear una conexión 
             using (OleDbConnection connection = new OleDbConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
 
-                    // Consulta SQL para seleccionar usuarios y contraseñas de la tabla "User"
-                    string query = "SELECT usuario, contraseña FROM User";
+                    string query = "SELECT User, Contrasena FROM User WHERE usuario = ?";  // Utiliza parámetros para prevenir inyección SQL
 
-                    // Crear un comando SQL
                     using (OleDbCommand command = new OleDbCommand(query, connection))
                     {
-                        // Ejecutar la consulta y obtener un lector de datos
+                        command.Parameters.Add(new OleDbParameter("User", username));
+
                         using (OleDbDataReader reader = command.ExecuteReader())
                         {
-                            // Iterar a través de los registros y mostrar usuarios y contraseñas
-                            while (reader.Read())
+                            if (reader.Read())
                             {
-                                string usuario = reader["usuario"].ToString();
-                                string contraseña = reader["contraseña"].ToString();
+                                string usuarioEnBaseDeDatos = reader["User"].ToString();
+                                string contraseñaEnBaseDeDatos = reader["Contrasena"].ToString();
 
-                                return username == usuario && password == contraseña;
+                                return usuarioEnBaseDeDatos == username && contraseñaEnBaseDeDatos == password;
+                            }
+                            else
+                            {
+                                return false; // El usuario no existe en la base de datos
                             }
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    
+                    // Manejo de errores, puedes registrar el error o mostrar un mensaje de error.
+                    return false;
                 }
-
             }
         }
+
+
+
         public static string Usuario { get; set; }
+
+        
+        
 
 
     }
