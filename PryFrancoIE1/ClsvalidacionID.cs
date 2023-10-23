@@ -28,7 +28,7 @@ namespace PryFrancoIE1
                 {
                     connection.Open();
 
-                    string query = "SELECT User, Contrasena FROM User WHERE usuario = ?";  // Utiliza parámetros para prevenir inyección SQL
+                    string query = "SELECT User, Contrasena FROM Usuarios WHERE User = ?";  // Utiliza parámetros para prevenir inyección SQL
 
                     using (OleDbCommand command = new OleDbCommand(query, connection))
                     {
