@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Data.OleDb;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace PryFrancoIE1
 {
@@ -65,8 +67,38 @@ namespace PryFrancoIE1
 
         public static string Usuario { get; set; }
 
-        
-        
+        string con = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Lucas Franco\\Source\\Repos\\PryFrancoIE123\\PryFrancoIE1\\Broker\\SistemaBroker.accdb;";
+        public void CargarLogs(string Usuario ,DateTime Fecha,string Accion)
+        {
+            try
+            {
+               
+                using (SqlConnection connection = new SqlConnection(con))
+                {
+                    connection.Open();
+
+                    
+                    string query = "INSERT INTO Logs (Usuario, FechaHora, Accion) VALUES (@Usuario, @Fecha, @Accion)";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        
+                        command.Parameters.AddWithValue("@Usuario", Usuario);
+                        command.Parameters.AddWithValue("@Fecha", Fecha);
+                        command.Parameters.AddWithValue("@Accion", Accion);
+
+                        
+                        command.ExecuteNonQuery();
+
+                        
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
 
 
     }

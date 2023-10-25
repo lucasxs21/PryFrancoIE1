@@ -23,8 +23,15 @@ namespace PryFrancoIE1
             if (validacion.ValidarUsuario(txtUsuario.Text , txtContra.Text))
             {
                 StreamWriter sw = new StreamWriter("logGenerales", true);
-                sw.WriteLine(txtUsuario.Text + "-Fecha-" + DateTime.Now);
+                sw.WriteLine(txtUsuario.Text + "-Fecha-" + DateTime.Now + btnLogin.Text);
                 sw.Close();
+
+                string Usuario = txtUsuario.Text;
+                DateTime fecha = DateTime.Now;
+                string Accion = btnLogin.Text;
+
+                ClsvalidacionID registro = new ClsvalidacionID();
+                registro.CargarLogs(Usuario, fecha, Accion);
 
                 frmPrincipal frm = new frmPrincipal();
 
