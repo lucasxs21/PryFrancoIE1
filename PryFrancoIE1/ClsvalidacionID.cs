@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,9 +12,11 @@ namespace PryFrancoIE1
     internal class ClsvalidacionID
     {
         private string usuarioValido = "Admin"; // Define el nombre de usuario válido
-        private string contraseñaValida = "Admin"; // Define la contraseña válida
+        private string contraseñaValida = "Admin"; // Define la contraseña válida  
 
-        string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=SistemaBroker.accdb;";
+        
+        string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source = C:\\Users\\Lucas Franco\\Source\\Repos\\PryFrancoIE123\\PryFrancoIE1\\Broker\\SistemaBroker.accdb;";
+
 
         public bool ValidarUsuario(string username, string password)
         {

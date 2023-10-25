@@ -121,5 +121,10 @@
   <ItemGroup>
     <None Include="Resources\FOTOS-04.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Broker\SistemaBroker.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
