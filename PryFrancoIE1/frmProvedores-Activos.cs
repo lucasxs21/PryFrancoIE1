@@ -100,6 +100,14 @@ namespace PryFrancoIE1
 
         private void txtRetorno_Click(object sender, EventArgs e)
         {
+
+            string Usuario = ClsvalidacionID.Usuario;
+            DateTime fecha = DateTime.Now;
+            string Accion = "Pagina Principal";
+
+            ClsvalidacionID registro = new ClsvalidacionID();
+            registro.CargarLogs(Usuario, fecha, Accion);
+
             frmPrincipal frm = new frmPrincipal();
 
             frm.Show();

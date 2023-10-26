@@ -71,7 +71,7 @@
             this.proveedoresToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registroDeProveedoresToolStripMenuItem});
             this.proveedoresToolStripMenuItem1.Name = "proveedoresToolStripMenuItem1";
-            this.proveedoresToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.proveedoresToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.proveedoresToolStripMenuItem1.Text = "Proveedores";
             // 
             // registroDeProveedoresToolStripMenuItem
@@ -94,13 +94,14 @@
             this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.activosToolStripMenuItem});
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
             // 
             // activosToolStripMenuItem
             // 
             this.activosToolStripMenuItem.Name = "activosToolStripMenuItem";
-            this.activosToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.activosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.activosToolStripMenuItem.Text = "Activos";
             this.activosToolStripMenuItem.Click += new System.EventHandler(this.activosToolStripMenuItem_Click);
             // 

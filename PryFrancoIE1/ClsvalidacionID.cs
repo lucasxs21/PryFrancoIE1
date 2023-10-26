@@ -24,9 +24,6 @@ namespace PryFrancoIE1
         {
 
 
-            // Cadena de conexión 
-            //string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=SistemaBroker.accdb;";
-
             using (OleDbConnection connection = new OleDbConnection(connectionString))
             {
                 try
@@ -67,20 +64,20 @@ namespace PryFrancoIE1
 
         public static string Usuario { get; set; }
 
-        string con = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Users\\Lucas Franco\\Source\\Repos\\PryFrancoIE123\\PryFrancoIE1\\Broker\\SistemaBroker.accdb;";
+        
         public void CargarLogs(string Usuario ,DateTime Fecha,string Accion)
         {
             try
             {
                
-                using (SqlConnection connection = new SqlConnection(con))
+                using (OleDbConnection connection = new OleDbConnection(connectionString))
                 {
                     connection.Open();
 
                     
                     string query = "INSERT INTO Logs (Usuario, FechaHora, Accion) VALUES (@Usuario, @Fecha, @Accion)";
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (OleDbCommand command = new OleDbCommand(query, connection))
                     {
                         
                         command.Parameters.AddWithValue("@Usuario", Usuario);

@@ -25,6 +25,14 @@ namespace PryFrancoIE1
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            string Usuario = ClsvalidacionID.Usuario;
+            DateTime fecha = DateTime.Now;
+            string Accion = "REGISTRO AGREGAR";
+
+            ClsvalidacionID registro = new ClsvalidacionID();
+            registro.CargarLogs(Usuario, fecha, Accion);
+
+
             int numero = Convert.ToInt32(txtNumero.Text);
             string entidad = txtEntidad.Text;
             string apertura = dtpApertura.Value.ToShortDateString();
@@ -89,6 +97,14 @@ namespace PryFrancoIE1
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            string Usuario = ClsvalidacionID.Usuario;
+            DateTime fecha = DateTime.Now;
+            string Accion = "REGISTRO MODIFICAR";
+
+            ClsvalidacionID registro = new ClsvalidacionID();
+            registro.CargarLogs(Usuario, fecha, Accion);
+
+
 
             int numero = Convert.ToInt32(txtNumero.Text);
             string entidad = txtEntidad.Text;
@@ -117,6 +133,14 @@ namespace PryFrancoIE1
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             DialogResult pregunta = MessageBox.Show("¿Estás seguro de que deseas eliminar?", "Confirmación", MessageBoxButtons.YesNo);
+
+            string Usuario = ClsvalidacionID.Usuario;
+            DateTime fecha = DateTime.Now;
+            string Accion = "REGISTRO ELIMINAR";
+
+            ClsvalidacionID registro = new ClsvalidacionID();
+            registro.CargarLogs(Usuario, fecha, Accion);
+
             int numero = Convert.ToInt32(txtNumero.Text);
 
             if (pregunta == DialogResult.Yes)
@@ -155,6 +179,13 @@ namespace PryFrancoIE1
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            string Usuario = ClsvalidacionID.Usuario;
+            DateTime fecha = DateTime.Now;
+            string Accion = "REGISTRO LIMPIAR";
+
+            ClsvalidacionID registro = new ClsvalidacionID();
+            registro.CargarLogs(Usuario, fecha, Accion);
+
             Limpiar();
         }
 
@@ -168,6 +199,14 @@ namespace PryFrancoIE1
 
         private void txtRetorno_Click(object sender, EventArgs e)
         {
+            string Usuario = ClsvalidacionID.Usuario;
+            DateTime fecha = DateTime.Now;
+            string Accion = "Pagina Principal";
+
+            ClsvalidacionID registro = new ClsvalidacionID();
+            registro.CargarLogs(Usuario, fecha, Accion);
+
+
             frmPrincipal frm = new frmPrincipal();
 
             frm.Show();

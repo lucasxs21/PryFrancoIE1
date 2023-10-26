@@ -44,6 +44,13 @@ namespace PryFrancoIE1
 
         private void registroDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string Usuario = ClsvalidacionID.Usuario;
+            DateTime fecha = DateTime.Now;
+            string Accion = registroDeProveedoresToolStripMenuItem.Text;
+
+            ClsvalidacionID registro = new ClsvalidacionID();
+            registro.CargarLogs(Usuario, fecha, Accion); 
+
             frmRegistro_proveedores frm = new frmRegistro_proveedores();
 
             frm.Show();
@@ -58,10 +65,22 @@ namespace PryFrancoIE1
 
         private void activosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string Usuario = ClsvalidacionID.Usuario;
+            DateTime fecha = DateTime.Now;
+            string Accion = activosToolStripMenuItem.Text;
+
+            ClsvalidacionID registro = new ClsvalidacionID();
+            registro.CargarLogs(Usuario, fecha, Accion);
+
             frmProvedores_Activos frm = new frmProvedores_Activos();
 
             frm.Show();
             this.Hide();
+
+        }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }
