@@ -13,7 +13,7 @@ namespace PryFrancoIE1
 {
     internal class ClsvalidacionID
     {
-         
+        
 
         string rutaArchivo ;
 
