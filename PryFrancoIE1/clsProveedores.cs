@@ -14,7 +14,7 @@ namespace PryFrancoIE1
         
         public void CargarInfo(DataGridView grilla, ComboBox cmbJuzg, ComboBox cmbJuri, ComboBox cmbLiqui)
         {
-            string archivoProveedor = "Listado de aseguradores.csv";
+            string archivoProveedor = @"../../Broker/Listado de aseguradores.csv" ;
 
             try
             {              
@@ -70,7 +70,7 @@ namespace PryFrancoIE1
 
         public void Registrar(Int32 id, string entidad, string Apertura, string expendiente, string juzg, string juri, string direccion, string liquidador)
         {
-            string archivoProveedor = "Listado de aseguradores.csv";
+            string archivoProveedor = @"../../Broker/Listado de aseguradores.csv";
 
             try
             {
@@ -114,7 +114,7 @@ namespace PryFrancoIE1
 
         public void Modificar(int id, string entidad, string apertura, string expediente, string juzg, string juri, string direccion, string liquidador)
         {
-            string archivoProveedor = "Listado de aseguradores.csv";
+            string archivoProveedor = @"../../Broker/Listado de aseguradores.csv";
 
             try
             {
@@ -169,7 +169,7 @@ namespace PryFrancoIE1
 
         public void Eliminar(Int32 id)
         {
-            string archivoProveedor = "Listado de aseguradores.csv";
+            string archivoProveedor = @"../../Broker/Listado de aseguradores.csv";
             List<string> lineas = new List<string>();
 
             try

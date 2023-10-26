@@ -13,11 +13,18 @@ namespace PryFrancoIE1
 {
     internal class ClsvalidacionID
     {
-        private string usuarioValido = "Admin"; // Define el nombre de usuario válido
-        private string contraseñaValida = "Admin"; // Define la contraseña válida  
+         
 
-        
-        string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source = C:\\Users\\Lucas Franco\\Source\\Repos\\PryFrancoIE123\\PryFrancoIE1\\Broker\\SistemaBroker.accdb;";
+        string rutaArchivo ;
+
+        string connectionString ;
+
+        public ClsvalidacionID()
+        {
+            rutaArchivo = @"../../Broker/sistemaBroker.accdb";
+            connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source =" + rutaArchivo;
+
+        }
 
 
         public bool ValidarUsuario(string username, string password)
@@ -79,21 +86,17 @@ namespace PryFrancoIE1
 
                     using (OleDbCommand command = new OleDbCommand(query, connection))
                     {
-                        
                         command.Parameters.AddWithValue("@Usuario", Usuario);
                         command.Parameters.AddWithValue("@Fecha", Fecha);
                         command.Parameters.AddWithValue("@Accion", Accion);
-
                         
                         command.ExecuteNonQuery();
-
-                        
                     }
                 }
             }
             catch (Exception ex)
             {
-                
+                //informar el error por pantalla
             }
         }
 

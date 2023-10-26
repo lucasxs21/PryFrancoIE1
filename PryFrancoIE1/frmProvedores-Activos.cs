@@ -52,10 +52,12 @@ namespace PryFrancoIE1
 
         private void frmProvedores_Activos_Load(object sender, EventArgs e)
         {
-            string rutaBase = AppDomain.CurrentDomain.BaseDirectory;
-            string carpetaProveedores = "Proveedores";
+            //string rutaBase = AppDomain.CurrentDomain.BaseDirectory;
+            //string carpetaProveedores = "Proveedores";
 
-            string rutaCompleta = Path.Combine(rutaBase, carpetaProveedores);
+            //string rutaCompleta = Path.Combine(rutaBase, carpetaProveedores);
+
+            string rutaCompleta = @"../../Proveedores";
 
             // Agregar la carpeta principal al árbol
             TreeNode rootNode = new TreeNode("Carpetas y Archivos del Proyecto");
