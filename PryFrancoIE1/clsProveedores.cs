@@ -34,13 +34,14 @@ namespace PryFrancoIE1
 
                         while (!sr.EndOfStream)
                         {
-                            readLine = sr.ReadLine();
+                            //readLine = sr.ReadLine();
                             separador = readLine.Split(';');
                             grilla.Rows.Add(separador);
 
                             juzgados.Add(separador[4]);
                             jurisdicciones.Add(separador[5]);
                             responsables.Add(separador[7]);
+                            readLine = sr.ReadLine();
 
                         }
 
