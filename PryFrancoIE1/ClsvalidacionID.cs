@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Data.OleDb;
+using System.Drawing;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -100,6 +101,42 @@ namespace PryFrancoIE1
             }
         }
 
+        public void InsertarUsuario(string usuario, string contrasena, bool permisoProv, bool permisoActiv, Image firma)
+        {
+            try
+            {
+                using (OleDbConnection conn = new OleDbConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // Convertir la firma en bytes
+                    byte[] firmaBytes;
+                    using (MemoryStream m = new MemoryStream())
+                    {
+                        firma.Save(m, System.Drawing.Imaging.ImageFormat.Png); //seleccionamos el formato 
+                        firmaBytes = m.ToArray();
+                    }
+
+                    // Insertar los datos en la base de datos
+                    string Query = "INSERT INTO Usuarios (User, Contrasena, PermisoProv, PermisoActiv, Firma) VALUES (@User, @Contrasena, @PermisoProv, @PermisoActiv, @Firma)";
+                   
+                    using (OleDbCommand cmd = new OleDbCommand(Query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@User", usuario);
+                        cmd.Parameters.AddWithValue("@Contrasena", contrasena);
+                        cmd.Parameters.AddWithValue("@PermisoProv", permisoProv);
+                        cmd.Parameters.AddWithValue("@PermisoActiv", permisoActiv);
+                        cmd.Parameters.AddWithValue("@Firma", firmaBytes);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
 
     }
 }

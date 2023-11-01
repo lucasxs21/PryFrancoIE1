@@ -92,6 +92,7 @@
             this.txtContra.PasswordChar = '+';
             this.txtContra.Size = new System.Drawing.Size(160, 22);
             this.txtContra.TabIndex = 15;
+            this.txtContra.TextChanged += new System.EventHandler(this.txtContra_TextChanged);
             // 
             // lblContra
             // 
@@ -132,6 +133,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(160, 22);
             this.txtUsuario.TabIndex = 11;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // optRegistro
             // 
@@ -197,6 +199,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmRegistroUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Usuario";
             this.Load += new System.EventHandler(this.frmRegistroUsuario_Load);
             this.gpbFirma.ResumeLayout(false);

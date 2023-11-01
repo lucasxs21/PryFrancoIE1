@@ -83,5 +83,26 @@ namespace PryFrancoIE1
         {
 
         }
+
+        private void registrarNuevoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string Usuario = ClsvalidacionID.Usuario;
+            DateTime fecha = DateTime.Now;
+            string Accion = registrarNuevoUsuarioToolStripMenuItem.Text;
+
+            ClsvalidacionID registro = new ClsvalidacionID();
+            registro.CargarLogs(Usuario, fecha, Accion);
+
+            frmRegistroUsuario frm = new frmRegistroUsuario();
+
+            frm.Show();
+            //this.Hide();
+
+        }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

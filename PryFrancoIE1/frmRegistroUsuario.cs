@@ -30,10 +30,17 @@ namespace PryFrancoIE1
         {
 
         }
-
+        
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
+            string usuario = txtUsuario.Text;
+            string contrasena = txtContra.Text;
+            bool permisoProv = optRegistro.Checked;
+            bool permisoActiv = optActivos.Checked;
+            Image firma = pbxFirma.Image;
 
+            ClsvalidacionID registro = new ClsvalidacionID();
+            registro.InsertarUsuario(usuario, contrasena, permisoProv, permisoActiv, firma);
         }
 
         private void pbxFirma_MouseDown(object sender, MouseEventArgs e)
@@ -68,6 +75,16 @@ namespace PryFrancoIE1
                 g.Clear(Color.White);
             }
             pbxFirma.Invalidate();
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            txtContra.Enabled = true;
+        }
+
+        private void txtContra_TextChanged(object sender, EventArgs e)
+        {
+            btnConfirmar.Enabled=true;                                                  
         }
     }
 }
