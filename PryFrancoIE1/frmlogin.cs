@@ -14,13 +14,11 @@ namespace PryFrancoIE1
 {
     public partial class frmlogin : Form
     {
-        private bool drawing;
-        private Point previousPoint;
-        private Bitmap drawingBitmap;
+        
         public frmlogin()
         {
             InitializeComponent();
-            InitializeDrawing();
+            
         }
         ClsvalidacionID validacion = new ClsvalidacionID();
         private void btnLogin_Click(object sender, EventArgs e)
@@ -78,44 +76,44 @@ namespace PryFrancoIE1
             MessageBox.Show("Admin", "Su Contraseña es:", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void InitializeDrawing()
-        {
-            drawingBitmap = new Bitmap(pbxFirma.Width, pbxFirma.Height);
-            pbxFirma.Image = drawingBitmap;
-        }
+        //private void InitializeDrawing()
+        //{
+        //    drawingBitmap = new Bitmap(pbxFirma.Width, pbxFirma.Height);
+        //    pbxFirma.Image = drawingBitmap;
+        //}
 
-        private void pbxFirma_MouseDown(object sender, MouseEventArgs e)
-        {
-            drawing = true;
-            previousPoint = e.Location;
-        }
+        //private void pbxFirma_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    drawing = true;
+        //    previousPoint = e.Location;
+        //}
 
-        private void pbxFirma_MouseUp(object sender, MouseEventArgs e)
-        {
-            drawing = false;
-        }
+        //private void pbxFirma_MouseUp(object sender, MouseEventArgs e)
+        //{
+        //    drawing = false;
+        //}
 
-        private void pbxFirma_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (drawing)
-            {
-                using (Graphics g = Graphics.FromImage(drawingBitmap))
-                {
-                    g.DrawLine(new Pen(Color.Black, 2), previousPoint, e.Location);
-                }
+        //private void pbxFirma_MouseMove(object sender, MouseEventArgs e)
+        //{
+        //    if (drawing)
+        //    {
+        //        using (Graphics g = Graphics.FromImage(drawingBitmap))
+        //        {
+        //            g.DrawLine(new Pen(Color.Black, 2), previousPoint, e.Location);
+        //        }
 
-                pbxFirma.Invalidate();
-                previousPoint = e.Location;
-            }
-        }
+        //        pbxFirma.Invalidate();
+        //        previousPoint = e.Location;
+        //    }
+        //}
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            using (Graphics g = Graphics.FromImage(drawingBitmap))
-            {
-                g.Clear(Color.White);
-            }
-            pbxFirma.Invalidate();
-        }
+        //private void btnLimpiar_Click(object sender, EventArgs e)
+        //{
+        //    //using (Graphics g = Graphics.FromImage(drawingBitmap))
+        //    //{
+        //    //    g.Clear(Color.White);
+        //    //}
+        //    //pbxFirma.Invalidate();
+        //}
     }
 }
