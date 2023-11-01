@@ -41,7 +41,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(99, 55);
+            this.txtUsuario.Location = new System.Drawing.Point(94, 62);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(121, 20);
             this.txtUsuario.TabIndex = 0;
@@ -50,7 +50,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(12, 62);
+            this.lblUsuario.Location = new System.Drawing.Point(12, 65);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(46, 13);
             this.lblUsuario.TabIndex = 1;
@@ -59,7 +59,7 @@
             // btnLogin
             // 
             this.btnLogin.Enabled = false;
-            this.btnLogin.Location = new System.Drawing.Point(70, 184);
+            this.btnLogin.Location = new System.Drawing.Point(77, 187);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 2;
@@ -70,7 +70,7 @@
             // lblContra
             // 
             this.lblContra.AutoSize = true;
-            this.lblContra.Location = new System.Drawing.Point(12, 124);
+            this.lblContra.Location = new System.Drawing.Point(12, 134);
             this.lblContra.Name = "lblContra";
             this.lblContra.Size = new System.Drawing.Size(61, 13);
             this.lblContra.TabIndex = 3;
@@ -79,7 +79,7 @@
             // txtContra
             // 
             this.txtContra.Enabled = false;
-            this.txtContra.Location = new System.Drawing.Point(99, 117);
+            this.txtContra.Location = new System.Drawing.Point(94, 131);
             this.txtContra.Name = "txtContra";
             this.txtContra.PasswordChar = '+';
             this.txtContra.Size = new System.Drawing.Size(121, 20);
@@ -90,7 +90,7 @@
             // 
             this.lblini.AutoSize = true;
             this.lblini.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblini.Location = new System.Drawing.Point(31, 9);
+            this.lblini.Location = new System.Drawing.Point(48, 9);
             this.lblini.Name = "lblini";
             this.lblini.Size = new System.Drawing.Size(154, 20);
             this.lblini.TabIndex = 5;
@@ -99,7 +99,7 @@
             // lblOlvideUser
             // 
             this.lblOlvideUser.AutoSize = true;
-            this.lblOlvideUser.Location = new System.Drawing.Point(98, 78);
+            this.lblOlvideUser.Location = new System.Drawing.Point(96, 85);
             this.lblOlvideUser.Name = "lblOlvideUser";
             this.lblOlvideUser.Size = new System.Drawing.Size(87, 13);
             this.lblOlvideUser.TabIndex = 6;
@@ -110,7 +110,7 @@
             // lblOlvideContra
             // 
             this.lblOlvideContra.AutoSize = true;
-            this.lblOlvideContra.Location = new System.Drawing.Point(96, 140);
+            this.lblOlvideContra.Location = new System.Drawing.Point(96, 159);
             this.lblOlvideContra.Name = "lblOlvideContra";
             this.lblOlvideContra.Size = new System.Drawing.Size(106, 13);
             this.lblOlvideContra.TabIndex = 7;
@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(232, 230);
+            this.ClientSize = new System.Drawing.Size(240, 239);
             this.Controls.Add(this.lblOlvideContra);
             this.Controls.Add(this.lblOlvideUser);
             this.Controls.Add(this.lblini);

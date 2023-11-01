@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsProveedores.cs" />
+    <Compile Include="frmRegistroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistroUsuario.Designer.cs">
+      <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
       <DependentUpon>frmRegistro-proveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="ClsvalidacionID.cs" />
+    <EmbeddedResource Include="frmRegistroUsuario.resx">
+      <DependentUpon>frmRegistroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
