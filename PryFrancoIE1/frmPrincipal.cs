@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PryFrancoIE1
 {
@@ -21,7 +22,23 @@ namespace PryFrancoIE1
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
+            frmlogin frmPrincipal = new frmlogin();
+            ClsvalidacionID lectorDePermisos = new ClsvalidacionID();
             
+            bool[] permisos = lectorDePermisos.ObtenerPermisos(frmPrincipal.txtUsuario.Text);
+            bool tienePermiso = permisos.Any(p => p);
+
+            if (tienePermiso)
+            {
+                // Habilita el botón
+                gestionToolStripMenuItem.Enabled = true;
+                usuarioToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                gestionToolStripMenuItem.Enabled = false;
+                usuarioToolStripMenuItem.Enabled = false;
+            }
 
         }
 
@@ -101,6 +118,11 @@ namespace PryFrancoIE1
         }
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

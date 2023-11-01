@@ -25,9 +25,11 @@ namespace PryFrancoIE1
         {
             if (validacion.ValidarUsuario(txtUsuario.Text , txtContra.Text))
             {
-                StreamWriter sw = new StreamWriter("logGenerales", true);
-                sw.WriteLine(txtUsuario.Text + "-Fecha-" + DateTime.Now + btnLogin.Text);
-                sw.Close();
+                //StreamWriter sw = new StreamWriter("logGenerales", true);
+                //sw.WriteLine(txtUsuario.Text + "-Fecha-" + DateTime.Now + btnLogin.Text);
+                //sw.Close();
+
+
 
                 string Usuario = txtUsuario.Text;
                 DateTime fecha = DateTime.Now;
@@ -36,8 +38,8 @@ namespace PryFrancoIE1
                 ClsvalidacionID registro = new ClsvalidacionID();
                 registro.CargarLogs(Usuario, fecha, Accion);
 
-                frmPrincipal frm = new frmPrincipal();
 
+                frmPrincipal frm = new frmPrincipal();
                 frm.Show();
                 this.Hide();
 
@@ -46,6 +48,25 @@ namespace PryFrancoIE1
             string usuario = txtUsuario.Text;
 
             ClsvalidacionID.Usuario = usuario;
+
+            //ClsvalidacionID lectorDePermisos = new ClsvalidacionID();
+
+            //bool[] permisos = lectorDePermisos.ObtenerPermisos(usuario);
+            //bool tienePermiso = permisos.Any(p => p);
+
+            //if (tienePermiso)
+            //{
+            //    // Habilita el botón
+            //    frmPrincipal frmPrincipal = new frmPrincipal();
+            //    frmPrincipal.gestionToolStripMenuItem.Enabled = true;
+            //    frmPrincipal.usuarioToolStripMenuItem.Enabled = true;
+            //}
+            //else
+            //{
+            //    frmPrincipal frmPrincipal = new frmPrincipal();
+            //    frmPrincipal.gestionToolStripMenuItem.Enabled = false;
+            //    frmPrincipal.usuarioToolStripMenuItem.Enabled = false;
+            //}
 
         }
 

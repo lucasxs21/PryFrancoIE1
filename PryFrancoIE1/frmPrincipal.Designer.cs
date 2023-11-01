@@ -61,11 +61,13 @@
             this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // gestionToolStripMenuItem
             // 
             this.gestionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.proveedoresToolStripMenuItem1});
+            this.gestionToolStripMenuItem.Enabled = false;
             this.gestionToolStripMenuItem.Name = "gestionToolStripMenuItem";
             this.gestionToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.gestionToolStripMenuItem.Text = "Gestion";
@@ -75,7 +77,7 @@
             this.proveedoresToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registroDeProveedoresToolStripMenuItem});
             this.proveedoresToolStripMenuItem1.Name = "proveedoresToolStripMenuItem1";
-            this.proveedoresToolStripMenuItem1.Size = new System.Drawing.Size(174, 26);
+            this.proveedoresToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.proveedoresToolStripMenuItem1.Text = "Proveedores";
             // 
             // registroDeProveedoresToolStripMenuItem
@@ -98,7 +100,7 @@
             this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.activosToolStripMenuItem});
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
             this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
             // 
@@ -113,6 +115,7 @@
             // 
             this.usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarNuevoUsuarioToolStripMenuItem});
+            this.usuarioToolStripMenuItem.Enabled = false;
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.usuarioToolStripMenuItem.Text = "Usuario";
@@ -210,10 +213,8 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem gestionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem registroDeProveedoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listadoReportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem activosToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusgeneral;
@@ -222,8 +223,10 @@
         private System.Windows.Forms.Timer timerhora;
         private System.Windows.Forms.ToolStripStatusLabel statusUser;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarNuevoUsuarioToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem gestionToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem listadoReportesToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
     }
 }
 

@@ -39,7 +39,6 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.optRegistro = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.optActivos = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.gpbFirma.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFirma)).BeginInit();
@@ -50,10 +49,10 @@
             // 
             this.gpbFirma.Controls.Add(this.pbxFirma);
             this.gpbFirma.Controls.Add(this.btnLimpiar);
-            this.gpbFirma.Location = new System.Drawing.Point(20, 286);
-            this.gpbFirma.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbFirma.Location = new System.Drawing.Point(20, 272);
+            this.gpbFirma.Margin = new System.Windows.Forms.Padding(4);
             this.gpbFirma.Name = "gpbFirma";
-            this.gpbFirma.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbFirma.Padding = new System.Windows.Forms.Padding(4);
             this.gpbFirma.Size = new System.Drawing.Size(275, 251);
             this.gpbFirma.TabIndex = 19;
             this.gpbFirma.TabStop = false;
@@ -63,7 +62,7 @@
             // 
             this.pbxFirma.BackColor = System.Drawing.Color.White;
             this.pbxFirma.Location = new System.Drawing.Point(11, 15);
-            this.pbxFirma.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbxFirma.Margin = new System.Windows.Forms.Padding(4);
             this.pbxFirma.Name = "pbxFirma";
             this.pbxFirma.Size = new System.Drawing.Size(256, 187);
             this.pbxFirma.TabIndex = 8;
@@ -75,7 +74,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Location = new System.Drawing.Point(85, 209);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(100, 28);
             this.btnLimpiar.TabIndex = 18;
@@ -87,7 +86,7 @@
             // 
             this.txtContra.Enabled = false;
             this.txtContra.Location = new System.Drawing.Point(105, 129);
-            this.txtContra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContra.Margin = new System.Windows.Forms.Padding(4);
             this.txtContra.Name = "txtContra";
             this.txtContra.PasswordChar = '+';
             this.txtContra.Size = new System.Drawing.Size(160, 22);
@@ -107,8 +106,8 @@
             // btnConfirmar
             // 
             this.btnConfirmar.Enabled = false;
-            this.btnConfirmar.Location = new System.Drawing.Point(105, 556);
-            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirmar.Location = new System.Drawing.Point(105, 541);
+            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(100, 28);
             this.btnConfirmar.TabIndex = 13;
@@ -129,7 +128,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(105, 78);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(160, 22);
             this.txtUsuario.TabIndex = 11;
@@ -139,7 +138,7 @@
             // 
             this.optRegistro.AutoSize = true;
             this.optRegistro.Location = new System.Drawing.Point(8, 23);
-            this.optRegistro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.optRegistro.Margin = new System.Windows.Forms.Padding(4);
             this.optRegistro.Name = "optRegistro";
             this.optRegistro.Size = new System.Drawing.Size(180, 20);
             this.optRegistro.TabIndex = 20;
@@ -149,28 +148,15 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.optActivos);
             this.groupBox1.Controls.Add(this.optRegistro);
             this.groupBox1.Location = new System.Drawing.Point(20, 186);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(275, 92);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(275, 67);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Permisos";
-            // 
-            // optActivos
-            // 
-            this.optActivos.AutoSize = true;
-            this.optActivos.Location = new System.Drawing.Point(8, 52);
-            this.optActivos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.optActivos.Name = "optActivos";
-            this.optActivos.Size = new System.Drawing.Size(146, 20);
-            this.optActivos.TabIndex = 21;
-            this.optActivos.TabStop = true;
-            this.optActivos.Text = "Provedores Activos";
-            this.optActivos.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -197,7 +183,7 @@
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtUsuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmRegistroUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Usuario";
@@ -223,7 +209,6 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.RadioButton optRegistro;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton optActivos;
         private System.Windows.Forms.Label label1;
     }
 }
