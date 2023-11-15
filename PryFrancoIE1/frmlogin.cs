@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Drawing;
+using Microsoft.Win32;
 
 namespace PryFrancoIE1
 {
@@ -43,7 +44,12 @@ namespace PryFrancoIE1
                 frm.Show();
                 this.Hide();
 
+                
+
             }
+            //permisos 
+            ClsvalidacionID registro1 = new ClsvalidacionID();
+            string rolUsuario = registro1.ObtenerRolUsuario(txtUsuario.Text);
 
             string usuario = txtUsuario.Text;
 
@@ -54,19 +60,19 @@ namespace PryFrancoIE1
             //bool[] permisos = lectorDePermisos.ObtenerPermisos(usuario);
             //bool tienePermiso = permisos.Any(p => p);
 
-            //if (tienePermiso)
-            //{
-            //    // Habilita el botón
-            //    frmPrincipal frmPrincipal = new frmPrincipal();
-            //    frmPrincipal.gestionToolStripMenuItem.Enabled = true;
-            //    frmPrincipal.usuarioToolStripMenuItem.Enabled = true;
-            //}
-            //else
-            //{
-            //    frmPrincipal frmPrincipal = new frmPrincipal();
-            //    frmPrincipal.gestionToolStripMenuItem.Enabled = false;
-            //    frmPrincipal.usuarioToolStripMenuItem.Enabled = false;
-            //}
+            if (rolUsuario == "Admin")
+            {
+                // Habilita el botón
+                frmPrincipal frmPrincipal = new frmPrincipal();
+                frmPrincipal.gestionToolStripMenuItem.Enabled = true;
+                frmPrincipal.usuarioToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                frmPrincipal frmPrincipal = new frmPrincipal();
+                frmPrincipal.gestionToolStripMenuItem.Enabled = false;
+                frmPrincipal.usuarioToolStripMenuItem.Enabled = false;
+            }
 
         }
 
@@ -97,44 +103,6 @@ namespace PryFrancoIE1
             MessageBox.Show("Admin", "Su Contraseña es:", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        //private void InitializeDrawing()
-        //{
-        //    drawingBitmap = new Bitmap(pbxFirma.Width, pbxFirma.Height);
-        //    pbxFirma.Image = drawingBitmap;
-        //}
-
-        //private void pbxFirma_MouseDown(object sender, MouseEventArgs e)
-        //{
-        //    drawing = true;
-        //    previousPoint = e.Location;
-        //}
-
-        //private void pbxFirma_MouseUp(object sender, MouseEventArgs e)
-        //{
-        //    drawing = false;
-        //}
-
-        //private void pbxFirma_MouseMove(object sender, MouseEventArgs e)
-        //{
-        //    if (drawing)
-        //    {
-        //        using (Graphics g = Graphics.FromImage(drawingBitmap))
-        //        {
-        //            g.DrawLine(new Pen(Color.Black, 2), previousPoint, e.Location);
-        //        }
-
-        //        pbxFirma.Invalidate();
-        //        previousPoint = e.Location;
-        //    }
-        //}
-
-        //private void btnLimpiar_Click(object sender, EventArgs e)
-        //{
-        //    //using (Graphics g = Graphics.FromImage(drawingBitmap))
-        //    //{
-        //    //    g.Clear(Color.White);
-        //    //}
-        //    //pbxFirma.Invalidate();
-        //}
+        
     }
 }

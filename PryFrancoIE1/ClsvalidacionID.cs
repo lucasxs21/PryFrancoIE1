@@ -164,7 +164,36 @@ namespace PryFrancoIE1
             return permisos;
         }
 
+        public string ObtenerRolUsuario(string condicion)
+        {
+            
+            string query = $"SELECT Rol FROM Usuarios WHERE Condicion = '{condicion}';";           
+            string rolUsuario = null;
 
+            // Crear la conexión a la base de datos
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            {
+                
+                connection.Open();
+
+                // Crear el comando con la consulta SQL y la conexión
+                using (OleDbCommand command = new OleDbCommand(query, connection))
+                {
+                    // Ejecutar la consulta y obtener el resultado
+                    object result = command.ExecuteScalar();
+
+                    // Verificar si se obtuvo un resultado no nulo
+                    if (result != null)
+                    {
+                        // Convertir el resultado a string y asignarlo a la variable rolUsuario
+                        rolUsuario = result.ToString();
+                    }
+                }
+            }
+
+            // Devolver el resultado
+            return rolUsuario;
+        }
 
         //public bool[] ObtenerPermisos(string usuariox)
         //{
