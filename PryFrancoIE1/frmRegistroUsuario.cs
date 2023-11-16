@@ -35,13 +35,16 @@ namespace PryFrancoIE1
         {
             string usuario = txtUsuario.Text;
             string contrasena = txtContra.Text;
-            bool permisoProv = optRegistro.Checked;
+            string permisoProv = cmbRol.Text;
             
             Image firma = pbxFirma.Image;
 
             ClsvalidacionID registro = new ClsvalidacionID();
             registro.InsertarUsuario(usuario, contrasena, permisoProv, firma);
+            this.Hide();
         }
+
+
 
         private void pbxFirma_MouseDown(object sender, MouseEventArgs e)
         {

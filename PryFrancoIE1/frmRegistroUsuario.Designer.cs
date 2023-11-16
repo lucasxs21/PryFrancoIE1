@@ -37,9 +37,9 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.optRegistro = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cmbRol = new System.Windows.Forms.ComboBox();
             this.gpbFirma.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxFirma)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -134,21 +134,9 @@
             this.txtUsuario.TabIndex = 11;
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
-            // optRegistro
-            // 
-            this.optRegistro.AutoSize = true;
-            this.optRegistro.Location = new System.Drawing.Point(8, 23);
-            this.optRegistro.Margin = new System.Windows.Forms.Padding(4);
-            this.optRegistro.Name = "optRegistro";
-            this.optRegistro.Size = new System.Drawing.Size(180, 20);
-            this.optRegistro.TabIndex = 20;
-            this.optRegistro.TabStop = true;
-            this.optRegistro.Text = "Registro de Proveedores";
-            this.optRegistro.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.optRegistro);
+            this.groupBox1.Controls.Add(this.cmbRol);
             this.groupBox1.Location = new System.Drawing.Point(20, 186);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
@@ -168,6 +156,19 @@
             this.label1.Size = new System.Drawing.Size(196, 31);
             this.label1.TabIndex = 22;
             this.label1.Text = "Crear Usuario";
+            // 
+            // cmbRol
+            // 
+            this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRol.FormattingEnabled = true;
+            this.cmbRol.Items.AddRange(new object[] {
+            "Admin",
+            "Invitado"});
+            this.cmbRol.Location = new System.Drawing.Point(71, 23);
+            this.cmbRol.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbRol.Name = "cmbRol";
+            this.cmbRol.Size = new System.Drawing.Size(132, 24);
+            this.cmbRol.TabIndex = 6;
             // 
             // frmRegistroUsuario
             // 
@@ -191,7 +192,6 @@
             this.gpbFirma.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxFirma)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,8 +207,8 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.RadioButton optRegistro;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbRol;
     }
 }

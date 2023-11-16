@@ -22,6 +22,7 @@ namespace PryFrancoIE1
             
         }
         ClsvalidacionID validacion = new ClsvalidacionID();
+        int contador = 0;
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (validacion.ValidarUsuario(txtUsuario.Text , txtContra.Text))
@@ -29,8 +30,6 @@ namespace PryFrancoIE1
                 //StreamWriter sw = new StreamWriter("logGenerales", true);
                 //sw.WriteLine(txtUsuario.Text + "-Fecha-" + DateTime.Now + btnLogin.Text);
                 //sw.Close();
-
-
 
                 string Usuario = txtUsuario.Text;
                 DateTime fecha = DateTime.Now;
@@ -47,32 +46,25 @@ namespace PryFrancoIE1
                 
 
             }
+            else
+            {
+                contador++;
+                MessageBox.Show("Usuario o contraseña incorrecta");
+                if (contador == 3)
+                {
+                    MessageBox.Show("Demasiados intentos");
+                    this.Close();
+
+                }
+            }
             //permisos 
-            ClsvalidacionID registro1 = new ClsvalidacionID();
-            string rolUsuario = registro1.ObtenerRolUsuario(txtUsuario.Text);
+            
 
             string usuario = txtUsuario.Text;
 
             ClsvalidacionID.Usuario = usuario;
 
-            //ClsvalidacionID lectorDePermisos = new ClsvalidacionID();
-
-            //bool[] permisos = lectorDePermisos.ObtenerPermisos(usuario);
-            //bool tienePermiso = permisos.Any(p => p);
-
-            if (rolUsuario == "Admin")
-            {
-                // Habilita el botón
-                frmPrincipal frmPrincipal = new frmPrincipal();
-                frmPrincipal.gestionToolStripMenuItem.Enabled = true;
-                frmPrincipal.usuarioToolStripMenuItem.Enabled = true;
-            }
-            else
-            {
-                frmPrincipal frmPrincipal = new frmPrincipal();
-                frmPrincipal.gestionToolStripMenuItem.Enabled = false;
-                frmPrincipal.usuarioToolStripMenuItem.Enabled = false;
-            }
+            
 
         }
 
@@ -80,12 +72,13 @@ namespace PryFrancoIE1
 
         private void frmlogin_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void txtContra_TextChanged(object sender, EventArgs e)
         {
             btnLogin.Enabled = true;
+
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
@@ -103,6 +96,22 @@ namespace PryFrancoIE1
             MessageBox.Show("Admin", "Su Contraseña es:", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        
+        private void btnLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Llama al método del botón
+                btnLogin_Click(btnLogin, EventArgs.Empty);
+            }
+        }
+
+        private void txtContra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Llama al método del botón
+                btnLogin_Click(btnLogin, EventArgs.Empty);
+            }
+        }
     }
 }

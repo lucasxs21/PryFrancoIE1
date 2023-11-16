@@ -9,6 +9,7 @@ using System.Data.OleDb;
 using System.Drawing;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PryFrancoIE1
 {
@@ -101,7 +102,7 @@ namespace PryFrancoIE1
             }
         }
 
-        public void InsertarUsuario(string usuario, string contrasena, bool permisoProv,  Image firma)
+        public void InsertarUsuario(string usuario, string contrasena, String rol,  Image firma)
         {
             try
             {
@@ -118,18 +119,20 @@ namespace PryFrancoIE1
                     }
 
                     // Insertar los datos en la base de datos
-                    string Query = "INSERT INTO Usuarios (User, Contrasena, PermisoProv, Firma) VALUES (@User, @Contrasena, @PermisoProv, @Firma)";
+                    string Query = "INSERT INTO Usuarios ([User], [Contrasena], Rol, Firma) VALUES (@User, @Contrasena, @PermisoProv, @Firma)";
                    
                     using (OleDbCommand cmd = new OleDbCommand(Query, conn))
                     {
                         cmd.Parameters.AddWithValue("@User", usuario);
                         cmd.Parameters.AddWithValue("@Contrasena", contrasena);
-                        cmd.Parameters.AddWithValue("@PermisoProv", permisoProv);         
-                        cmd.Parameters.AddWithValue("@Firma", firmaBytes);
+                        cmd.Parameters.AddWithValue("@PermisoProv", rol);
+                        cmd.Parameters.AddWithValue("@Firma", OleDbType.VarBinary).Value = firmaBytes; ;
 
                         cmd.ExecuteNonQuery();
                     }
                 }
+                MessageBox.Show("Se Registro con exito");
+                
             }
             catch (Exception ex)
             {
@@ -138,89 +141,64 @@ namespace PryFrancoIE1
         }
 
 
-        public bool[] ObtenerPermisos(string usuariox)
+       
+
+
+
+
+        public string ObtenerRolUsuario()
         {
-            bool[] permisos = new bool[1]; // permisos en la base
-
-            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            try
             {
-                connection.Open();
+                string user = "";
+                string rol = "";
 
-                string query = "SELECT IIF(permisoProv=true, 1, 0) AS permisoProv FROM Usuarios WHERE username = @Username";
-                using (OleDbCommand command = new OleDbCommand(query, connection))
+                using (OleDbConnection con = new OleDbConnection(connectionString))
                 {
-                    command.Parameters.AddWithValue("@Username", usuariox);
+                    con.Open();
 
-                    using (OleDbDataReader reader = command.ExecuteReader())
+                    // Obtener el último usuario de los logs
+                    using (OleDbCommand cmd = new OleDbCommand("SELECT TOP 1 Usuario FROM Logs ORDER BY IdLogs DESC;", con))
+                    using (OleDbDataReader rdr = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
+                        if (rdr.Read())
                         {
-                            permisos[0] = Convert.ToInt32(reader["permisoProv"]) == 1;
+                            user = rdr["Usuario"].ToString();
                         }
                     }
-                }
-            }
 
-            return permisos;
-        }
-
-        public string ObtenerRolUsuario(string condicion)
-        {
-            
-            string query = $"SELECT Rol FROM Usuarios WHERE Condicion = '{condicion}';";           
-            string rolUsuario = null;
-
-            // Crear la conexión a la base de datos
-            using (OleDbConnection connection = new OleDbConnection(connectionString))
-            {
-                
-                connection.Open();
-
-                // Crear el comando con la consulta SQL y la conexión
-                using (OleDbCommand command = new OleDbCommand(query, connection))
-                {
-                    // Ejecutar la consulta y obtener el resultado
-                    object result = command.ExecuteScalar();
-
-                    // Verificar si se obtuvo un resultado no nulo
-                    if (result != null)
+                    // Obtener el rol del usuario
+                    if (!string.IsNullOrEmpty(user))
                     {
-                        // Convertir el resultado a string y asignarlo a la variable rolUsuario
-                        rolUsuario = result.ToString();
+                        using (OleDbCommand cmdB = new OleDbCommand("SELECT Rol FROM Usuarios WHERE user = @user;", con))
+                        {
+                            cmdB.Parameters.AddWithValue("@user", user);
+
+                            using (OleDbDataReader rdrB = cmdB.ExecuteReader())
+                            {
+                                if (rdrB.Read())
+                                {
+                                    rol = rdrB["Rol"].ToString();
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo encontrar el usuario en los registros de logs.", "ERROR", MessageBoxButtons.OK);
                     }
                 }
-            }
 
-            // Devolver el resultado
-            return rolUsuario;
+                return rol;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK);
+                return string.Empty;
+            }
         }
 
-        //public bool[] ObtenerPermisos(string usuariox)
-        //{
-        //    bool[] permisos = new bool[1]; // permisos en la base
 
-        //    using (OleDbConnection connection = new OleDbConnection(connectionString))
-        //    {
-        //        connection.Open();
 
-        //        string query = "SELECT permisoProv  FROM Usuarios WHERE username = @Username ";
-        //        using (OleDbCommand command = new OleDbCommand(query, connection))
-        //        {
-        //            command.Parameters.AddWithValue("@Username", "Juan");
-
-        //            using (OleDbDataReader reader = command.ExecuteReader())
-        //            {
-        //                if (reader.Read())
-        //                {
-        //                    permisos[0] = Convert.ToBoolean(reader["permisoProv"]);
-
-        //                }
-
-        //            }
-        //        }
-        //    }
-
-        //    return permisos;
-        //}
     }
 }
